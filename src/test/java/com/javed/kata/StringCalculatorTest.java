@@ -25,4 +25,10 @@ public class StringCalculatorTest {
         assert calculator.add("4,5")==9;
     }
 
+    @DisplayName("Multiple number should be summed.")
+    @Test
+    public void testMultipleNumbers(){
+        assert calculator.add("5,2,8")==15;
+    }
+
 }
