@@ -1,13 +1,13 @@
-#TDD Kata 1 - String Calculator
+# TDD Kata 1 - String Calculator
 
-###http://osherove.com/kata
+### http://osherove.com/kata
 Before you start:
 - Try not to read ahead .
 - Do one task at a time. The trick is to learn to work incrementally.
 - Make sure you only test for correct inputs. there is no need to test for invalid inputs for
 this kata
 - Test First!
-###String Calculator
+### String Calculator
 - In a test-first manner, create a simple class <code>class StringCalculator</code> with a method <code>public int Add(string numbers)</code>
 <br>
 <br>
