@@ -7,15 +7,8 @@ public class StringCalculator {
         if (!numbers.isEmpty()) {
             if (numbers.startsWith("//[")) {
                 String[] temp = numbers.split("\n", 2);
-
-                String[] delimiters = temp[0].substring(3, temp[0].length() - 1).split("]\\[");
-
-                StringBuilder delimiter = new StringBuilder();
-                for (String del : delimiters) {
-                    delimiter.append(escapeChars(del)).append("|");
-                }
-                delimiter.deleteCharAt(delimiter.length() - 1);
-                sum = getSum(temp[1], delimiter.toString());
+                String delimiter = getDelimiters(temp[0]);
+                sum = getSum(temp[1], delimiter);
             } else if (numbers.startsWith("//")) {
                 String[] temp = numbers.split("\n", 2);
                 String del = temp[0].substring(2);
@@ -25,6 +18,17 @@ public class StringCalculator {
             }
         }
         return sum;
+    }
+
+    private String getDelimiters(String s) {
+        String[] delimiters = s.substring(3, s.length() - 1).split("]\\[");
+
+        StringBuilder delimiter = new StringBuilder();
+        for (String del : delimiters) {
+            delimiter.append(escapeChars(del)).append("|");
+        }
+        delimiter.deleteCharAt(delimiter.length() - 1);
+        return delimiter.toString();
     }
 
     private int getSum(String numbers, String del) throws Exception {
