@@ -31,4 +31,10 @@ public class StringCalculatorTest {
         assert calculator.add("5,2,8")==15;
     }
 
+    @DisplayName("Add numbers with newline as well as comma")
+    @Test
+    public void testNewlineNumbers(){
+        assert calculator.add("1\n2,3")==6;
+    }
+
 }
