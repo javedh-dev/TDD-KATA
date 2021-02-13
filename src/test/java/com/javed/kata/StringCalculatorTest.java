@@ -19,4 +19,10 @@ public class StringCalculatorTest {
         assert calculator.add("4")==4;
     }
 
+    @DisplayName("Two number are summed and returned.")
+    @Test
+    public void testTwoNumbers(){
+        assert calculator.add("4,5")==9;
+    }
+
 }
