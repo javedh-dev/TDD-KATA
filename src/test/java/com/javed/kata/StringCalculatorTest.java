@@ -57,10 +57,16 @@ public class StringCalculatorTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-    @DisplayName("NUmbers bigger than 1000 are ignored")
+    @DisplayName("Numbers bigger than 1000 are ignored")
     @Test
     public void testBiggerNumbers() throws Exception {
         assert calculator.add("2,1001,3")==5;
+    }
+
+    @DisplayName("Add support delimiter in //[***]\n1***2***3 format")
+    @Test
+    public void testMultiCharDelimiter() throws Exception {
+        assert calculator.add("//[***]\n1***2***3")==6;
     }
 
 }
