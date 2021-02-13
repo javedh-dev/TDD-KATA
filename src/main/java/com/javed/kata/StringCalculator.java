@@ -2,7 +2,7 @@ package com.javed.kata;
 
 public class StringCalculator {
 
-    public int add(String numbers){
+    public int add(String numbers) throws Exception{
         int sum = 0;
         if(!numbers.isEmpty()) {
             if(numbers.startsWith("//")){
@@ -16,11 +16,19 @@ public class StringCalculator {
         return sum;
     }
 
-    private int getSum(String numbers, String del) {
+    private int getSum(String numbers, String del) throws Exception{
         int sum = 0;
+        int negativeSum = 0;
         String[] nums = numbers.split(del);
         for (String num : nums) {
-            sum += Integer.parseInt(num);
+            int i=Integer.parseInt(num);
+            if (i<0){
+                negativeSum+=i;
+            }
+            sum += i;
+        }
+        if(negativeSum!=0){
+            throw new Exception(String.format("negatives not allowed, %d",negativeSum));
         }
         return sum;
     }
