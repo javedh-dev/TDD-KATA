@@ -63,10 +63,16 @@ public class StringCalculatorTest {
         assert calculator.add("2,1001,3")==5;
     }
 
-    @DisplayName("Add support delimiter in //[***]\n1***2***3 format")
+    @DisplayName("Support delimiter in //[***]\n1***2***3 format")
     @Test
     public void testMultiCharDelimiter() throws Exception {
         assert calculator.add("//[***]\n1***2***3")==6;
+    }
+
+    @DisplayName("Support multiple custom delimiters")
+    @Test
+    public void testMultipleCustomDelimiter() throws Exception {
+        assert calculator.add("//[*][%]\\n1*2%3") == 6;
     }
 
 }
