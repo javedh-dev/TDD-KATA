@@ -24,8 +24,9 @@ public class StringCalculator {
             int i=Integer.parseInt(num);
             if (i<0){
                 negativeSum+=i;
+            }else if(i<=1000) {
+                sum += i;
             }
-            sum += i;
         }
         if(negativeSum!=0){
             throw new Exception(String.format("negatives not allowed, %d",negativeSum));
