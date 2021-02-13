@@ -1,14 +1,20 @@
 package com.javed.kata;
 
+import java.util.regex.Pattern;
+
 public class StringCalculator {
 
     public int add(String numbers) throws Exception{
         int sum = 0;
         if(!numbers.isEmpty()) {
-            if(numbers.startsWith("//")){
+            if(numbers.startsWith("//[")){
+                String[] temp = numbers.split("\n",2);
+                String del = temp[0].substring(3,temp[0].length()-1);
+                sum = getSum(temp[1],Pattern.quote(del));
+            }else if(numbers.startsWith("//")){
                 String[] temp = numbers.split("\n",2);
                 String del = temp[0].substring(2);
-                sum = getSum(temp[1],del);
+                sum = getSum(temp[1],Pattern.quote(del));
             }else {
                 sum = getSum(numbers, "[,\n]");
             }
