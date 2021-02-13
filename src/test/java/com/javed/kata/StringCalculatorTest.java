@@ -3,6 +3,9 @@ package com.javed.kata;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class StringCalculatorTest {
 
     private final StringCalculator calculator = new StringCalculator();
@@ -41,6 +44,19 @@ public class StringCalculatorTest {
     @Test
     public void testCustomDelimiter(){
         assert calculator.add("//;\n1;2;3")==6;
+    }
+
+    @DisplayName("Throws exception on negative numbers")
+    @Test
+    public void testNegativeNumbers(){
+        Exception exception = assertThrows(Exception.class, () -> {
+            calculator.add("-1,-2,3");
+        });
+
+        String expectedMessage = "negatives not allowed, -3";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
 }
