@@ -57,4 +57,10 @@ public class StringCalculatorTest {
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
+    @DisplayName("NUmbers bigger than 1000 are ignored")
+    @Test
+    public void testBiggerNumbers() throws Exception {
+        assert calculator.add("2,1001,3")==5;
+    }
+
 }
