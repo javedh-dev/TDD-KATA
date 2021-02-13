@@ -8,11 +8,11 @@ Before you start:
 this kata
 - Test First!
 ###String Calculator
-- In a test-first manner, create a simple class `class StringCalculator` with a method `public int Add(string numbers)`
+- In a test-first manner, create a simple class <code>class StringCalculator</code> with a method <code>public int Add(string numbers)</code>
 <br>
 <br>
-- The method can take `0`, `1` or `2` numbers, and will return their sum (for an empty string it will return 0) 
-  for example - `“” == 0 , “1” == 1 , “1,2” == 3`
+- The method can take <code>0</code>, <code>1</code> or <code>2</code> numbers, and will return their sum (for an empty string it will return 0) 
+  for example - <code>“” == 0 , “1” == 1 , “1,2” == 3</code>
   <br>
   <br>
 - Start with the simplest test case of an empty string and move to one & two numbers
@@ -30,45 +30,45 @@ this kata
 - Allow the Add method to handle new lines between numbers (instead of commas).
   <br>
   <br>
-- The following input is ok: `“1\n2,3” == 6`
+- The following input is ok: <code>“1\n2,3” == 6</code>
   <br>
   <br>
-- The following is INVALID input so do not expect it : `“1,\n”` (not need to write a test for it)
+- The following is INVALID input so do not expect it : <code>“1,\n”</code> (not need to write a test for it)
   <br>
   <br>
 - Support different delimiters:<br>
    to change a delimiter, the beginning of the string will contain a separate line that looks like this:
-  `“//[delimiter]\n[numbers…]”`<br>
-   for example - `“//;\n1;2” == 3`, since the default delimiter is `;`.<br>
+  <code>“//[delimiter]\n[numbers…]”</code><br>
+   for example - <code>“//;\n1;2” == 3</code>, since the default delimiter is <code>;</code>.<br>
   <br>
-  `Note: All existing scenarios and tests should still be supporte`
+  <code>Note: All existing scenarios and tests should still be supported</code>
   <br>
   <br>
-- Calling Add with a negative number will throw an exception `negatives not allowed` - and the negative that was passed.
+- Calling Add with a negative number will throw an exception <code>negatives not allowed</code> - and the negative that was passed.
   <br>
   <br>
 - If there are multiple negatives, show all of them in the exception message
   <br>
   <br>
-- Using TDD, Add a method to `StringCalculator` called `public int GetCalledCount()` that returns how many times 
-  `Add()` was invoked.<br>
+- Using TDD, Add a method to <code>StringCalculator</code> called <code>public int GetCalledCount()</code> that returns how many times 
+  <code>Add()</code> was invoked.<br>
   Remember - Start with a failing (or even non compiling) test.
   <br>
   <br>
 - Numbers bigger than 1000 should be ignored, for example:
-   `2 + 1001 == 2`
+   <code>2 + 1001 == 2</code>
   <br>
   <br>
-- Delimiters can be of any length with the following format: `“//[delimiter]\n”`<br>
-  for example: `“//[***]\n1***2***3” == 6`
+- Delimiters can be of any length with the following format: <code>“//[delimiter]\n”</code><br>
+  for example: <code>“//[***]\n1***2***3” == 6</code>
   <br>
   <br>
-- Allow multiple delimiters like this:`“//[delim1][delim2]\n”`<br>
-  for example `“//[*][%]\n1*2%3” == 6.`
+- Allow multiple delimiters like this:<code>“//[delim1][delim2]\n”</code><br>
+  for example <code>“//[*][%]\n1*2%3” == 6.</code>
   <br>
   <br>
 - make sure you can also handle multiple delimiters with length longer than one char 
-  for example `“//[**][%%]\n1**2%%3” == 6.`
+  for example <code>“//[**][%%]\n1**2%%3” == 6.</code>
   <br>
   <br>
     
