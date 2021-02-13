@@ -37,4 +37,10 @@ public class StringCalculatorTest {
         assert calculator.add("1\n2,3")==6;
     }
 
+    @DisplayName("Add numbers with custom delimiter")
+    @Test
+    public void testCustomDelimiter(){
+        assert calculator.add("//;\n1;2;3")==6;
+    }
+
 }
